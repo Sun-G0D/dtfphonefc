@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<!-- GENERATED FILE: made by build.mjs from template.html + content.js. Do not edit it by hand. To change the guide, edit content.js and run: node build.mjs -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAF6F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161311" media="(prefers-color-scheme: dark)">
+<title>DTF U Village · Phone Call Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23A3161F'/%3E%3Cpath d='M8 9h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-9l-5 4v-4H8a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z' fill='%23fff'/%3E%3C/svg%3E">
+<!--
+  =====================================================================
+  DTF U Village · Phone Call Guide — APP TEMPLATE
+  =====================================================================
+  This file holds the app's layout (HTML), look (CSS) and behavior (JS).
+  The words of the guide are NOT here: they live in content.js.
+
+  build.mjs copies this file to index.html and drops the content from
+  content.js into the marked placeholder near the bottom.
+  To change wording, edit content.js and run:  node build.mjs
+  =====================================================================
+-->
+<style>
+/* ---------- Design tokens ---------- */
+:root {
+  color-scheme: light dark;
+  --bg: #FAF6F0;
+  --surface: #FFFFFF;
+  --surface-2: #F2ECE3;
+  --text: #1D1916;
+  --muted: #5B524A;
+  --line: #E0D6CA;
+  --line-strong: #B5A797;
+  --accent: #A3161F;
+  --accent-hover: #86111A;
+  --accent-text: #A3161F;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #FBE9E7;
+  --say-bg: #FFF4F2;
+  --say-border: #E2A9A2;
+  --ask-ink: #1B5682;
+  --ask-bg: #EAF3FA;
+  --ask-border: #9FC3DE;
+  --do-ink: #276236;
+  --do-bg: #EDF6EE;
+  --info-ink: #4A423B;
+  --rule-ink: #5E3E00;
+  --rule-bg: #FFF2D6;
+  --rule-border: #D99A16;
+  --needs-bg: #FFE45C;
+  --needs-ink: #2B2300;
+  --needs-border: #C9A800;
+  --ph-bg: #FCE3DF;
+  --focus: #1A56DB;
+  --shadow: 0 10px 30px -14px rgba(110, 20, 20, .45);
+  --header-h: 112px;
+  --radius: 16px;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161311;
+    --surface: #201C19;
+    --surface-2: #2A2420;
+    --text: #F3EDE7;
+    --muted: #BCB1A7;
+    --line: #3A332D;
+    --line-strong: #62574E;
+    --accent: #C42B34;
+    --accent-hover: #D63A43;
+    --accent-text: #FF9A92;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #3A1E1D;
+    --say-bg: #2B1F1D;
+    --say-border: #7A3D37;
+    --ask-ink: #93C8EF;
+    --ask-bg: #172633;
+    --ask-border: #2F5674;
+    --do-ink: #93D6A2;
+    --do-bg: #172A1C;
+    --info-ink: #D9D0C8;
+    --rule-ink: #FFD98A;
+    --rule-bg: #33270F;
+    --rule-border: #B98A22;
+    --needs-bg: #FFE45C;
+    --needs-ink: #2B2300;
+    --needs-border: #FFE45C;
+    --ph-bg: #47201D;
+    --focus: #8AB4F8;
+    --shadow: 0 10px 30px -12px rgba(0, 0, 0, .7);
+  }
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html:has(dialog[open]) { overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+button { font: inherit; color: inherit; background: none; border: 0; margin: 0; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; text-align: inherit; }
+button:disabled { cursor: default; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+h1, h2, h3 { line-height: 1.25; }
+svg.i { width: 22px; height: 22px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95em; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+
+.skip {
+  position: absolute; left: 8px; top: -100px; z-index: 100;
+  background: var(--text); color: var(--bg); padding: 12px 16px; border-radius: 10px; min-height: 48px; font-weight: 700;
+}
+.skip:focus { top: 8px; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding-top: env(safe-area-inset-top);
+}
+.topbar-inner { max-width: 1400px; margin: 0 auto; }
+.brand-row { display: flex; align-items: center; gap: 10px; padding: 8px 14px 2px; min-width: 0; }
+.brand { margin: 0; font-size: 1.0625rem; font-weight: 800; letter-spacing: .01em; flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); margin-right: 8px; vertical-align: 1px; }
+.training-pill {
+  flex: 0 0 auto; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ask-ink); background: var(--ask-bg); border: 1px solid var(--ask-border); border-radius: 999px; padding: 2px 10px;
+}
+.toolbar { display: flex; gap: 2px; padding: 2px 6px 6px; }
+.tb {
+  flex: 1 1 0; min-width: 0; min-height: 54px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  border-radius: 12px; font-size: .8125rem; font-weight: 700; color: var(--text); padding: 4px 2px;
+}
+.tb .lbl { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.tb .wide-only { display: none; }
+.tb:hover:not(:disabled) { background: var(--surface-2); }
+.tb:active:not(:disabled) { background: var(--line); }
+.tb:disabled { color: var(--line-strong); }
+.tb[aria-pressed="true"], .tb[aria-current="true"] { background: var(--accent-soft); color: var(--accent-text); }
+@media (min-width: 600px) {
+  .tb { flex-direction: row; gap: 8px; font-size: .9375rem; min-height: 48px; }
+}
+@media (min-width: 900px) {
+  .topbar-inner { display: flex; align-items: center; gap: 12px; padding: 6px 12px; }
+  .brand-row { flex: 1 1 auto; padding: 0 4px; }
+  .toolbar { flex: 0 0 auto; padding: 0; gap: 4px; }
+  .tb { flex: 0 0 auto; padding: 0 14px; }
+  .tb .wide-only { display: inline; }
+}
+
+/* ---------- Layout ---------- */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); max-width: 1400px; margin: 0 auto; }
+.map-side { display: none; }
+@media (min-width: 1000px) {
+  .layout.has-side { grid-template-columns: 340px minmax(0, 1fr); }
+  .layout.has-side .map-side {
+    display: block; position: sticky; top: var(--header-h); align-self: start;
+    height: calc(100vh - var(--header-h)); height: calc(100dvh - var(--header-h));
+    overflow: auto; overscroll-behavior: contain;
+    border-right: 1px solid var(--line); background: var(--surface-2);
+  }
+}
+.map-side-title { margin: 0; padding: 14px 16px 0; font-size: 1.0625rem; }
+main { width: 100%; max-width: 800px; margin: 0 auto; padding: 16px 10px 40px; min-width: 0; }
+@media (min-width: 600px) { main { padding: 24px 20px 48px; } }
+.foot { margin-top: 40px; text-align: center; color: var(--muted); font-size: .9375rem; }
+.notice { background: var(--surface); border: 2px dashed var(--line-strong); border-radius: var(--radius); padding: 20px; }
+
+/* ---------- Flowchart path ---------- */
+.flow { display: flex; flex-direction: column; }
+.card-past {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 8px 12px 8px 10px;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; color: var(--muted); text-align: left;
+}
+.card-past .t { flex: 1 1 auto; min-width: 0; font-weight: 600; }
+.card-past .rw { display: inline-flex; align-items: center; gap: 4px; font-size: .8125rem; font-weight: 700; color: var(--muted); }
+.card-past .rw svg.i { width: 18px; height: 18px; }
+.card-past:hover { border-color: var(--line-strong); color: var(--text); background: var(--surface); }
+.step-no {
+  flex: 0 0 auto; display: inline-grid; place-items: center; min-width: 30px; height: 30px; padding: 0 6px;
+  border-radius: 999px; background: var(--surface); border: 1px solid var(--line-strong);
+  font-size: .875rem; font-weight: 800; color: var(--muted);
+}
+.conn { position: relative; display: flex; justify-content: center; padding: 6px 0 16px; min-height: 46px; scroll-margin-top: calc(var(--header-h) + 8px); }
+.conn::before { content: ""; position: absolute; top: 0; bottom: 8px; left: 50%; width: 2px; margin-left: -1px; background: var(--line-strong); }
+.conn::after { content: ""; position: absolute; bottom: 1px; left: 50%; margin-left: -7px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid var(--line-strong); }
+.conn-label {
+  position: relative; z-index: 1; max-width: 92%; text-align: center;
+  background: var(--bg); border: 1px solid var(--line-strong); border-radius: 999px;
+  padding: 3px 14px; font-size: .9375rem; font-weight: 700; color: var(--muted);
+}
+.conn.active::before { background: var(--accent-text); }
+.conn.active::after { border-top-color: var(--accent-text); }
+.conn.active .conn-label { border-color: var(--accent-text); color: var(--accent-text); }
+
+.card-current {
+  background: var(--surface); border: 2px solid var(--accent); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px 14px 16px; scroll-margin-top: calc(var(--header-h) + 8px);
+}
+@media (min-width: 600px) { .card-current { padding: 18px 22px 22px; } }
+.card-current.enter { animation: card-in .28s ease-out; }
+@keyframes card-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.card-head .step-no { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.card-head h2 { margin: 0; font-size: 1.375rem; flex: 1 1 12em; min-width: 0; display: flex; align-items: center; gap: 8px; }
+.card-head h2:focus { outline: none; }
+.card-head h2 svg.i { color: var(--accent-text); }
+
+/* ---------- Items ---------- */
+.items { display: flex; flex-direction: column; gap: 14px; }
+.blk-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 30px; }
+.blk-head .why-btn { margin: -9px 0; }
+.tlabel { display: inline-flex; align-items: center; gap: 7px; font-size: .8125rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.tico { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; font-size: .875rem; font-weight: 900; line-height: 1; flex: 0 0 auto; font-style: normal; text-transform: none; letter-spacing: 0; }
+.t-say { color: var(--accent-text); } .t-say .tico, .tico.t-say { background: var(--accent); color: var(--accent-ink); }
+.t-ask { color: var(--ask-ink); } .t-ask .tico, .tico.t-ask { background: var(--ask-ink); color: var(--surface); border-radius: 50%; }
+.t-info { color: var(--info-ink); } .t-info .tico, .tico.t-info { background: var(--surface-2); color: var(--info-ink); border: 1.5px solid var(--line-strong); border-radius: 50%; font-family: Georgia, serif; }
+.t-do { color: var(--do-ink); } .t-do .tico, .tico.t-do { background: var(--do-ink); color: var(--surface); }
+.t-rule { color: var(--rule-ink); } .t-rule .tico, .tico.t-rule { background: var(--rule-border); color: #1F1600; clip-path: polygon(50% 0, 100% 92%, 100% 100%, 0 100%, 0 92%); border-radius: 3px; padding-top: 5px; }
+
+/* SAY: speech bubble */
+.bubble {
+  margin-top: 6px; background: var(--say-bg); border: 2px solid var(--say-border);
+  border-radius: 20px 20px 20px 6px; padding: 12px 16px;
+  font-size: 1.25rem; line-height: 1.45; font-weight: 500;
+}
+/* ASK: question box */
+.blk-ask { background: var(--ask-bg); border: 1.5px solid var(--ask-border); border-left-width: 5px; border-radius: 12px; padding: 8px 12px 12px; }
+.blk-ask .q { margin-top: 4px; font-size: 1.1875rem; font-weight: 650; line-height: 1.4; }
+/* RULE: amber callout */
+.blk-rule { background: var(--rule-bg); border: 2px solid var(--rule-border); border-radius: 12px; padding: 8px 12px 12px; }
+.blk-rule .r { margin-top: 4px; font-weight: 600; }
+/* INFO bullets + DO checklist */
+.list { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.list > li { position: relative; padding-left: 26px; }
+.bullets > li::before { content: ""; position: absolute; left: 8px; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--info-ink); }
+.checks > li { padding-left: 34px; }
+.checks > li::before {
+  content: ""; position: absolute; left: 2px; top: .2em; width: 20px; height: 20px; border-radius: 5px;
+  border: 2px solid var(--do-ink); background: var(--do-bg);
+}
+.checks > li::after {
+  content: ""; position: absolute; left: 9px; top: calc(.2em + 4px); width: 6px; height: 10px;
+  border: solid var(--do-ink); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); opacity: .35;
+}
+.li-row { display: flex; align-items: flex-start; gap: 6px; }
+.li-text { flex: 1 1 auto; min-width: 0; padding-top: 1px; }
+.li-row .why-btn { margin: -11px 0 -8px; }
+.checks strong, .r strong, .q strong { font-weight: 800; }
+
+/* Placeholders like [your name] */
+.ph { background: var(--ph-bg); color: var(--accent-text); border: 1.5px dashed var(--accent-text); border-radius: 6px; padding: 0 4px; font-weight: 700; white-space: nowrap; }
+
+/* Needs info badges */
+.needs {
+  background: var(--needs-bg); color: var(--needs-ink); border: 1px solid var(--needs-border); border-radius: 6px;
+  padding: 1px 6px; font-size: .9375rem; font-weight: 600; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.needs-tag { font-size: .75rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; margin-right: 4px; white-space: nowrap; }
+.needs-block {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin-top: 8px;
+  background: var(--needs-bg); color: var(--needs-ink); border: 1px solid var(--needs-border); border-radius: 10px;
+  padding: 7px 10px; font-size: .9375rem; font-weight: 600; line-height: 1.4;
+}
+.needs-block .needs-tag { display: inline-flex; align-items: center; gap: 4px; }
+.needs-block .needs-tag::before { content: "⚑"; font-size: .9rem; }
+
+/* Why? buttons and panels */
+.why-btn { min-height: 48px; min-width: 56px; display: inline-flex; align-items: center; justify-content: flex-end; flex: 0 0 auto; }
+.why-pill {
+  display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px 4px 12px; border-radius: 999px;
+  border: 1.5px solid var(--line-strong); background: var(--surface); color: var(--text);
+  font-size: .875rem; font-weight: 800; line-height: 1.2; white-space: nowrap;
+}
+.why-pill svg.i { width: 16px; height: 16px; stroke-width: 2.5; transition: transform .2s ease; }
+.why-btn:hover .why-pill { border-color: var(--text); }
+.why-btn[aria-expanded="true"] .why-pill { background: var(--text); color: var(--surface); border-color: var(--text); }
+.why-btn[aria-expanded="true"] .why-pill svg.i { transform: rotate(180deg); }
+.why-btn:focus-visible { outline: none; }
+.why-btn:focus-visible .why-pill { outline: 3px solid var(--focus); outline-offset: 2px; }
+.why-panel {
+  display: grid; grid-template-rows: 0fr; visibility: hidden;
+  transition: grid-template-rows .24s ease, visibility 0s linear .24s;
+}
+.why-panel.open { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows .24s ease, visibility 0s; }
+.why-inner { overflow: hidden; min-height: 0; }
+.why-box {
+  margin-top: 8px; padding: 10px 12px; border-radius: 10px; background: var(--surface-2);
+  border-left: 4px solid var(--line-strong); font-size: 1rem; line-height: 1.5; color: var(--text);
+}
+.blk-ask .why-box, .blk-rule .why-box { background: var(--surface); }
+.why-box b { font-weight: 800; }
+
+/* ---------- Options ---------- */
+.opts-wrap { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); }
+.opts-label { margin: 0 0 10px; font-size: .8125rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 58px; padding: 10px 14px 10px 10px;
+  background: var(--surface); border: 2px solid var(--line-strong); border-radius: 14px; text-align: left;
+  font-size: 1.0625rem; font-weight: 700; line-height: 1.3;
+  transition: border-color .12s ease, background-color .12s ease, transform .08s ease;
+}
+.opt:hover { border-color: var(--accent); background: var(--accent-soft); }
+.opt:active { transform: scale(.985); }
+.opt .num {
+  flex: 0 0 auto; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px;
+  background: var(--accent); color: var(--accent-ink); font-weight: 900; font-size: 1.0625rem;
+}
+.opt-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.opt-label { overflow-wrap: anywhere; }
+.opt-hint { font-size: .9375rem; font-weight: 500; color: var(--muted); font-style: italic; }
+.opt .arr { flex: 0 0 auto; color: var(--muted); }
+.soon {
+  display: inline-block; align-self: flex-start; font-size: .75rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase;
+  padding: 2px 9px; border-radius: 999px; background: var(--surface-2); border: 1.5px solid var(--line-strong); color: var(--muted); font-style: normal;
+}
+/* Topic grid: the fork in the flowchart */
+.fork { position: relative; height: 30px; margin: -2px 0 6px; }
+.fork::before { content: ""; position: absolute; left: 50%; top: 0; height: 16px; margin-left: -1px; border-left: 2px solid var(--accent-text); }
+.fork::after { content: ""; position: absolute; left: 25%; right: 25%; top: 14px; height: 16px; border: 2px solid var(--accent-text); border-bottom: 0; border-radius: 10px 10px 0 0; }
+.opts.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.opts.grid .opt { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; min-height: 104px; padding: 10px 12px 12px; }
+.opts.grid .opt .num { width: 30px; height: 30px; font-size: 1rem; }
+.opts.grid .opt .arr { display: none; }
+.opts.grid .opt-hint { font-size: .9375rem; }
+@media (min-width: 600px) {
+  .opts.grid .opt { flex-direction: row; gap: 12px; min-height: 84px; padding: 12px 14px; }
+}
+
+/* ---------- Map (outline) ---------- */
+.map { padding: 6px 8px 24px; }
+.map-tools { display: flex; gap: 8px; padding: 6px 4px 10px; flex-wrap: wrap; }
+.mini-btn {
+  min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1.5px solid var(--line-strong);
+  background: var(--surface); font-size: .9375rem; font-weight: 700;
+}
+.mini-btn:hover { border-color: var(--text); }
+.tree { list-style: none; margin: 0; padding: 0; }
+.tree .tree { margin-left: 19px; }
+.tree .tree > li { position: relative; padding-left: 12px; }
+.tree .tree > li::before { content: ""; position: absolute; left: 0; top: 25px; width: 11px; border-top: 2px solid var(--line-strong); }
+.tree .tree > li::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; border-left: 2px solid var(--line-strong); }
+.tree .tree > li:last-child::after { bottom: auto; height: 26px; }
+.tree.root > li.chain-next { position: relative; }
+.tree.root > li.root-group { margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line-strong); }
+.tn-row { display: flex; align-items: center; min-height: 50px; }
+.tn-toggle {
+  flex: 0 0 auto; width: 40px; height: 48px; display: grid; place-items: center; border-radius: 10px; color: var(--muted);
+}
+.tn-toggle:hover { background: var(--line); color: var(--text); }
+.tn-toggle svg.i { width: 20px; height: 20px; transition: transform .15s ease; }
+.tn-toggle[aria-expanded="false"] svg.i { transform: rotate(-90deg); }
+.tn-spacer { flex: 0 0 40px; }
+.tn-jump {
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 9px; min-height: 48px; padding: 5px 8px;
+  border-radius: 11px; text-align: left; font-size: 1rem; line-height: 1.3; border: 1.5px solid transparent;
+}
+.tn-jump:hover { background: var(--surface); border-color: var(--line); }
+.tn-jump[aria-current] { background: var(--accent); color: var(--accent-ink); font-weight: 800; border-color: var(--accent); }
+.tn-jump[aria-current] .tn-sub { color: var(--accent-ink); }
+.tn-jump[aria-current] .tico { box-shadow: 0 0 0 2px var(--accent-ink); }
+.tn-text { flex: 1 1 auto; min-width: 0; }
+.tn-title { display: block; }
+.tn-sub { display: block; font-size: .8125rem; color: var(--muted); font-weight: 500; }
+.tn-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.tn-badge { flex: 0 0 auto; font-size: .6875rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tn-badge.needs-b { background: var(--needs-bg); color: var(--needs-ink); }
+.tn-badge.soon-b { background: var(--surface-2); color: var(--muted); border: 1px solid var(--line-strong); }
+.tn-ref .tn-jump { color: var(--muted); font-size: .9375rem; font-style: italic; min-height: 48px; }
+.tn-ref .ref-arrow { flex: 0 0 auto; font-style: normal; font-weight: 800; color: var(--muted); width: 24px; text-align: center; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 18px 6px 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: .875rem; color: var(--muted); }
+.map-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.map-legend .tico { width: 20px; height: 20px; font-size: .75rem; }
+
+/* ---------- Dialogs (sheets) ---------- */
+dialog.sheet {
+  border: 0; padding: 0; margin: 0; background: var(--surface); color: var(--text);
+  max-width: 100%; max-height: 100%; box-shadow: 0 -10px 40px rgba(0, 0, 0, .3);
+}
+dialog.sheet::backdrop { background: rgba(25, 12, 10, .5); }
+dialog.sheet[open] { display: flex; flex-direction: column; }
+.sheet-inner { display: flex; flex-direction: column; min-height: 0; flex: 1 1 auto; }
+.sheet-head { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 18px; border-bottom: 1px solid var(--line); flex: 0 0 auto; }
+.sheet-head h2 { flex: 1 1 auto; margin: 0; font-size: 1.1875rem; }
+.close-btn { min-height: 48px; min-width: 48px; padding: 0 14px; border-radius: 12px; border: 1.5px solid var(--line-strong); font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+.close-btn:hover { border-color: var(--text); }
+.sheet-body { overflow: auto; overscroll-behavior: contain; flex: 1 1 auto; min-height: 0; }
+.grab { width: 44px; height: 5px; border-radius: 3px; background: var(--line-strong); margin: 8px auto 2px; flex: 0 0 auto; }
+dialog.sheet-bottom {
+  position: fixed; top: auto; bottom: 0; left: 0; right: 0; width: 100%;
+  height: auto; max-height: 88vh; max-height: 88dvh; border-radius: 20px 20px 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+dialog.sheet-bottom[open] { animation: sheet-up .26s cubic-bezier(.2, .8, .2, 1); }
+@keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes fade-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+dialog.sheet-search { position: fixed; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; }
+dialog.sheet-search[open] { animation: fade-in .18s ease-out; }
+@media (min-width: 720px) {
+  dialog.sheet-search { top: 8vh; bottom: auto; width: min(680px, 92vw); height: auto; max-height: 80vh; margin: 0 auto; border-radius: 18px; }
+  dialog#dlg-menu { top: calc(var(--header-h) + 8px); bottom: auto; left: auto; right: 16px; width: 380px; max-height: 80vh; border-radius: 16px; }
+  dialog#dlg-menu[open] { animation: fade-in .16s ease-out; }
+  dialog#dlg-menu .grab { display: none; }
+}
+
+/* Search */
+.search-box { padding: 12px 14px 4px; flex: 0 0 auto; }
+.search-box input {
+  width: 100%; min-height: 52px; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--line-strong);
+  background: var(--bg); color: var(--text); font: inherit; font-size: 1.125rem;
+}
+.search-box input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 30%, transparent); }
+.search-count { margin: 6px 18px 4px; font-size: .875rem; color: var(--muted); font-weight: 600; }
+.results { list-style: none; margin: 0; padding: 0 10px 20px; }
+.res {
+  display: flex; align-items: flex-start; gap: 10px; width: 100%; min-height: 56px; padding: 10px 10px;
+  border-radius: 12px; text-align: left; border: 1.5px solid transparent;
+}
+.res:hover, .res:focus-visible { background: var(--surface-2); border-color: var(--line); }
+.res .tico { margin-top: 2px; }
+.res-main { flex: 1 1 auto; min-width: 0; }
+.res-title { display: block; font-weight: 800; }
+.res-crumb { display: block; font-size: .8125rem; color: var(--muted); font-weight: 600; }
+.res-snip { display: block; font-size: .9375rem; color: var(--muted); margin-top: 2px; }
+mark { background: var(--needs-bg); color: var(--needs-ink); border-radius: 3px; padding: 0 1px; }
+
+/* Menu */
+.menu-body { padding: 10px 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+.menu-row {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 10px 14px;
+  border: 1.5px solid var(--line-strong); border-radius: 14px; text-align: left; font-weight: 700; background: var(--surface);
+}
+.menu-row:hover { border-color: var(--text); }
+.menu-row small { display: block; font-weight: 500; color: var(--muted); font-size: .875rem; }
+.menu-row .grow { flex: 1 1 auto; min-width: 0; }
+.switch { flex: 0 0 auto; position: relative; width: 52px; height: 30px; border-radius: 999px; background: var(--line-strong); transition: background-color .15s ease; }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); transition: transform .15s ease; }
+[aria-checked="true"] .switch { background: var(--do-ink); }
+[aria-checked="true"] .switch::after { transform: translateX(22px); }
+.menu-info { font-size: .9375rem; color: var(--muted); }
+.menu-info h3 { font-size: .8125rem; text-transform: uppercase; letter-spacing: .07em; margin: 8px 0 6px; color: var(--text); }
+.menu-info ul { margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; background: var(--surface-2); border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; color: var(--text); }
+
+/* Toast */
+.toast {
+  position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 60;
+  background: var(--text); color: var(--bg); padding: 12px 18px; border-radius: 12px; font-weight: 700;
+  max-width: calc(100% - 28px); box-shadow: 0 8px 24px rgba(0,0,0,.25); overflow-wrap: anywhere;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<button type="button" class="skip" id="skip">Skip to current step</button>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <div class="brand-row">
+      <h1 class="brand" id="brand">DTF U Village · Phone Call Guide</h1>
+      <span class="training-pill" id="training-pill" hidden>Training mode</span>
+    </div>
+    <nav class="toolbar" aria-label="Call controls">
+      <button type="button" class="tb" id="btn-back" aria-label="Back one step">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span class="lbl">Back</span>
+      </button>
+      <button type="button" class="tb" id="btn-restart" aria-label="Restart call">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5"/></svg><span class="lbl">Restart<span class="wide-only"> call</span></span>
+      </button>
+      <button type="button" class="tb" id="btn-topics" aria-label="Topics">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span class="lbl">Topics</span>
+      </button>
+      <button type="button" class="tb" id="btn-map" aria-label="Map">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.5" width="6" height="5" rx="1.2"/><rect x="2.5" y="16.5" width="6" height="5" rx="1.2"/><rect x="15.5" y="16.5" width="6" height="5" rx="1.2"/><path d="M12 7.5V12M5.5 16.5V12h13v4.5"/></svg><span class="lbl">Map</span>
+      </button>
+      <button type="button" class="tb" id="btn-search" aria-label="Search" aria-haspopup="dialog" aria-keyshortcuts="/">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5l-4.6-4.6"/></svg><span class="lbl">Search</span>
+      </button>
+      <button type="button" class="tb" id="btn-menu" aria-label="Menu" aria-haspopup="dialog">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="lbl">Menu</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="layout" id="layout">
+  <aside class="map-side" id="map-side" aria-labelledby="map-side-title">
+    <h2 class="map-side-title" id="map-side-title">Map</h2>
+  </aside>
+  <main id="main">
+    <noscript><div class="notice">This guide needs JavaScript. Please turn it on in your browser settings.</div></noscript>
+    <div class="flow" id="flow"></div>
+    <footer class="foot">Content last updated: <span id="last-updated"></span></footer>
+  </main>
+</div>
+
+<div class="sr-only" id="sr-status" role="status" aria-live="polite"></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<dialog class="sheet sheet-bottom" id="dlg-map" aria-labelledby="dlg-map-title">
+  <div class="sheet-inner">
+    <div class="grab" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="dlg-map-title">Map</h2>
+      <button type="button" class="close-btn" data-close>Close</button>
+    </div>
+    <div class="sheet-body" id="map-sheet-body"></div>
+  </div>
+</dialog>
+
+<dialog class="sheet sheet-search" id="dlg-search" aria-labelledby="dlg-search-title">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h2 id="dlg-search-title">Search</h2>
+      <button type="button" class="close-btn" data-close>Close</button>
+    </div>
+    <div class="search-box">
+      <label class="sr-only" for="search-input">Search all steps</label>
+      <input type="search" id="search-input" placeholder="Try “wallet”, “party of 6”, “doordash”" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-describedby="search-count" aria-controls="search-results">
+    </div>
+    <p class="search-count" id="search-count" aria-live="polite"></p>
+    <div class="sheet-body">
+      <ul class="results" id="search-results"></ul>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet sheet-bottom" id="dlg-menu" aria-labelledby="dlg-menu-title">
+  <div class="sheet-inner">
+    <div class="grab" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="dlg-menu-title">Menu</h2>
+      <button type="button" class="close-btn" data-close>Close</button>
+    </div>
+    <div class="sheet-body">
+      <div class="menu-body">
+        <button type="button" class="menu-row" id="training-switch" role="switch" aria-checked="false">
+          <span class="grow">Training mode<small>Opens every “Why?” explanation for studying</small></span>
+          <span class="switch" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="menu-row" id="copy-link">
+          <span class="grow">Copy link to this step<small>Text it to a trainee to open this exact step</small></span>
+        </button>
+        <button type="button" class="menu-row" id="share-link" hidden>
+          <span class="grow">Share link to this step…</span>
+        </button>
+        <div class="menu-info">
+          <h3>Keyboard shortcuts</h3>
+          <ul>
+            <li><kbd>1</kbd>–<kbd>9</kbd>, <kbd>0</kbd> choose an option</li>
+            <li><kbd>/</kbd> search</li>
+            <li><kbd>Esc</kbd> close this panel</li>
+            <li>Browser back and forward move through the call</li>
+          </ul>
+          <h3>About</h3>
+          <p id="about-line"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* =====================================================================
+   CONTENT PLACEHOLDER
+   build.mjs replaces the next line with the content from content.js.
+   Don't edit index.html by hand: edit content.js and run node build.mjs.
+   ===================================================================== */
+window.GUIDE_CONTENT = {
+  "meta": {
+    "title": "DTF U Village · Phone Call Guide",
+    "lastUpdated": "2026-11-11",
+    "version": "1.0.0"
+  },
+  "startId": "ring",
+  "nodes": {
+    "ring": {
+      "title": "Phone is ringing",
+      "items": [
+        {
+          "type": "do",
+          "text": "Answer within 3 rings.",
+          "why": "A quick pickup is the guest's first impression of the restaurant. Callers are often deciding where to eat right now."
+        }
+      ],
+      "options": [
+        {
+          "label": "I picked up",
+          "to": "greeting"
+        }
+      ],
+      "keywords": [
+        "ring",
+        "ringing",
+        "phone",
+        "answer",
+        "pick up",
+        "incoming call",
+        "new call",
+        "start",
+        "3 rings",
+        "three rings"
+      ]
+    },
+    "greeting": {
+      "title": "Greeting",
+      "items": [
+        {
+          "type": "say",
+          "exact": true,
+          "text": "Hi there, thank you for calling Din Tai Fung University Village, this is [your name]. How can I help you?",
+          "why": "Using the same greeting on every call tells guests they've reached the University Village location and who they're talking to."
+        }
+      ],
+      "options": [
+        {
+          "label": "Guest explains why they're calling",
+          "to": "hub"
+        }
+      ],
+      "keywords": [
+        "greeting",
+        "hello",
+        "hi there",
+        "what do I say",
+        "script",
+        "how to answer",
+        "word for word",
+        "opening line"
+      ]
+    },
+    "hub": {
+      "title": "What's the call about?",
+      "items": [
+        {
+          "type": "ask",
+          "text": "Listen for why they're calling, then pick the topic."
+        }
+      ],
+      "options": [
+        {
+          "label": "Reservations & waitlist",
+          "hint": "“Can I book a table for 6?”",
+          "to": "res-size"
+        },
+        {
+          "label": "Running late / removed from waitlist",
+          "hint": "“We got taken off the waitlist”",
+          "to": "late"
+        },
+        {
+          "label": "Change or cancel a reservation",
+          "hint": "“Can I move my reservation to 7?”",
+          "to": "change"
+        },
+        {
+          "label": "Location & the move",
+          "hint": "“Where exactly are you?”",
+          "to": "loc"
+        },
+        {
+          "label": "Takeout orders",
+          "hint": "“Can I order takeout?”",
+          "to": "takeout"
+        },
+        {
+          "label": "Allergens & menu",
+          "hint": "“Does this have peanuts?”",
+          "to": "menu"
+        },
+        {
+          "label": "Lost item",
+          "hint": "“I left my jacket there”",
+          "to": "lost"
+        },
+        {
+          "label": "Order problem / refund",
+          "hint": "“My order was missing an item”",
+          "to": "refund"
+        },
+        {
+          "label": "Gift card balance",
+          "hint": "“How much is left on my card?”",
+          "to": "gift"
+        },
+        {
+          "label": "Something else",
+          "hint": "Anything not on this list",
+          "to": "other"
+        }
+      ],
+      "keywords": [
+        "topics",
+        "topic list",
+        "why are they calling",
+        "reason for call",
+        "main menu",
+        "what is the call about"
+      ]
+    },
+    "res-size": {
+      "title": "Dine-in: reservations & waitlist",
+      "items": [
+        {
+          "type": "rule",
+          "text": "Cashiers can't make reservations or add names to the waitlist over the phone. Point the guest to the right option instead."
+        },
+        {
+          "type": "ask",
+          "text": "“How many people will be in your party?”",
+          "why": "Party size decides which options are available. Parties of 1–2 have the most options and parties of 5+ have the fewest."
+        }
+      ],
+      "options": [
+        {
+          "label": "1–2 guests",
+          "to": "res-1-2"
+        },
+        {
+          "label": "3–4 guests",
+          "to": "res-3-4"
+        },
+        {
+          "label": "5 or more",
+          "to": "res-5plus"
+        }
+      ],
+      "keywords": [
+        "reservation",
+        "reserve",
+        "book",
+        "booking",
+        "book a table",
+        "table",
+        "waitlist",
+        "wait list",
+        "how long is the wait",
+        "wait time",
+        "party size",
+        "dine in",
+        "dinner tonight",
+        "lunch today",
+        "put my name down",
+        "add me to the list",
+        "how many people"
+      ]
+    },
+    "res-1-2": {
+      "title": "Party of 1–2 (the most options)",
+      "items": [
+        {
+          "type": "info",
+          "text": "Book a reservation online."
+        },
+        {
+          "type": "info",
+          "text": "Join the waitlist online."
+        },
+        {
+          "type": "info",
+          "text": "Join the waitlist in person. Only one person needs to come in to put the name down, but the whole party must be here when the table is ready."
+        },
+        {
+          "type": "info",
+          "text": "Sit at the bar: first come, first served, open seating. Usually faster than the main dining room. Requires a valid ID showing 21+. [CONFIRM: every guest in the party, or just one?]",
+          "why": "The bar is open seating on a first-come, first-served basis, so it's usually faster than waiting for a table in the main dining room."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "party of 1",
+        "party of 2",
+        "table for one",
+        "table for two",
+        "just me",
+        "two people",
+        "couple",
+        "date night",
+        "solo",
+        "bar",
+        "bar seating",
+        "21+",
+        "id",
+        "first come first served",
+        "walk in",
+        "online reservation",
+        "online waitlist"
+      ]
+    },
+    "res-3-4": {
+      "title": "Party of 3–4",
+      "items": [
+        {
+          "type": "info",
+          "text": "Same options as 1–2: book a reservation online, join the waitlist online, or join the waitlist in person (one person can put the name down, but the whole party must be here when the table is ready)."
+        },
+        {
+          "type": "rule",
+          "text": "Only very rarely suggest the bar for 3–4.",
+          "why": "The bar only has 3 tables that fit a party of 3–4, so it's rarely faster for them."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "party of 3",
+        "party of 4",
+        "table for three",
+        "table for four",
+        "three people",
+        "four people",
+        "family",
+        "bar",
+        "online reservation",
+        "online waitlist",
+        "walk in"
+      ]
+    },
+    "res-5plus": {
+      "title": "Party of 5 or more",
+      "items": [
+        {
+          "type": "info",
+          "text": "Online reservations and the online waitlist aren't available for 5+.",
+          "why": "Many calls about large parties come from guests the online system told to call us, so expect them. Online booking can't seat 5+, so the in-person waitlist and the private dining room are the only options."
+        },
+        {
+          "type": "info",
+          "text": "There are two options: (1) come in person to join the waitlist, or (2) book a private dining room through Guest Services."
+        }
+      ],
+      "options": [
+        {
+          "label": "Interested in a private dining room",
+          "to": "res-pdr"
+        },
+        {
+          "label": "They'll come in person",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "party of 5",
+        "party of 6",
+        "party of 7",
+        "party of 8",
+        "party of 10",
+        "table for 6",
+        "table for 8",
+        "large party",
+        "big group",
+        "group",
+        "birthday",
+        "5 people",
+        "6 people",
+        "8 people",
+        "website told me to call",
+        "online said to call",
+        "can't book online"
+      ]
+    },
+    "res-pdr": {
+      "title": "Private dining room",
+      "items": [
+        {
+          "type": "info",
+          "text": "Booked through Guest Services, not the restaurant. Give the guest their contact info: phone [TBD: Guest Services phone], email [TBD: Guest Services email]."
+        },
+        {
+          "type": "info",
+          "text": "Available Monday–Thursday only."
+        },
+        {
+          "type": "info",
+          "text": "Minimum spend is about $600 for lunch and about $1,000 for dinner. [CONFIRM: exact minimums]",
+          "why": "Mention the minimum and the Monday–Thursday limit up front so the guest can decide before contacting Guest Services."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "private dining room",
+        "private room",
+        "pdr",
+        "event",
+        "party room",
+        "banquet",
+        "corporate",
+        "company dinner",
+        "minimum spend",
+        "guest services",
+        "monday",
+        "thursday"
+      ]
+    },
+    "late": {
+      "title": "Running late / removed from the waitlist",
+      "items": [
+        {
+          "type": "info",
+          "text": "When we notify a party that their table is ready, we hold it for up to 15 minutes. After that, the table goes to the next party. [CONFIRM: does the same 15-minute hold apply to reservations, or only to the waitlist?]"
+        },
+        {
+          "type": "say",
+          "text": "No problem! When you get here, just let the greeters at the front know you're running late. They'll put you back on the waitlist for the next available table, so you'll be first in line and usually won't wait more than about 15 minutes.",
+          "why": "Guests who were removed can feel brushed off. Explaining the 15-minute hold shows it's policy, not personal, and telling them they'll be first in line shows they aren't starting over."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "late",
+        "running late",
+        "removed",
+        "taken off",
+        "kicked off the waitlist",
+        "missed my table",
+        "missed the text",
+        "lost my spot",
+        "15 minutes",
+        "hold my table",
+        "stuck in traffic",
+        "on my way"
+      ]
+    },
+    "change": {
+      "title": "Change or cancel a reservation",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“What would you like to change?”"
+        }
+      ],
+      "options": [
+        {
+          "label": "The time",
+          "to": "chg-time"
+        },
+        {
+          "label": "The party size",
+          "to": "chg-size"
+        },
+        {
+          "label": "Cancel it",
+          "to": "cancel"
+        }
+      ],
+      "keywords": [
+        "change reservation",
+        "modify",
+        "move my reservation",
+        "reschedule",
+        "update reservation",
+        "edit booking",
+        "existing reservation"
+      ]
+    },
+    "chg-time": {
+      "title": "Change the reservation time",
+      "items": [
+        {
+          "type": "rule",
+          "text": "We can't change the time of an existing reservation, and cashiers can't make reservations over the phone."
+        },
+        {
+          "type": "say",
+          "text": "Unfortunately we can't move an existing reservation, but if you book a new one online for the time you'd like, we're happy to cancel the old one for you.",
+          "why": "The guest books the new time themselves because we can't. We only cancel the old one after the new one is booked so they never lose their spot."
+        }
+      ],
+      "options": [
+        {
+          "label": "They've booked the new time, so cancel the old one",
+          "to": "cancel"
+        },
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "change time",
+        "move to 7",
+        "earlier",
+        "later",
+        "reschedule",
+        "different time",
+        "different day",
+        "push back",
+        "move my reservation",
+        "new time"
+      ]
+    },
+    "chg-size": {
+      "title": "Change the party size",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“How many people is the reservation for now, and how many will there be?”"
+        },
+        {
+          "type": "info",
+          "text": "[CONFIRM: the source notes say changes “from \u003c4 to 4+” usually aren't possible, which conflicts with “any change within 1–4 is fine.” This flow assumes the cutoff is moving into 5 or more.]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Staying within 1–4 guests (for example, 2 → 4)",
+          "to": "size-ok"
+        },
+        {
+          "label": "Going to 5+, or the party is already 5+",
+          "to": "size-large"
+        }
+      ],
+      "keywords": [
+        "more people",
+        "fewer people",
+        "add a person",
+        "add guests",
+        "extra person",
+        "party size",
+        "bigger party",
+        "smaller party",
+        "bringing a friend",
+        "one more person",
+        "change number of guests"
+      ]
+    },
+    "size-ok": {
+      "title": "Party size change within 1–4",
+      "items": [
+        {
+          "type": "do",
+          "text": "Update the party size in **Yelp Guest Manager**, then add a note about the change with your initials.",
+          "why": "The note and initials show who made the change, in case the host stand has questions."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "update party size",
+        "yelp",
+        "yelp guest manager",
+        "initials",
+        "note",
+        "2 to 4",
+        "3 to 4",
+        "add one person"
+      ]
+    },
+    "size-large": {
+      "title": "Party size change involving 5+",
+      "items": [
+        {
+          "type": "info",
+          "text": "Usually not possible, except in special circumstances."
+        },
+        {
+          "type": "do",
+          "text": "If you're not too busy, check with G3 whether the change can be made."
+        },
+        {
+          "type": "info",
+          "text": "Even if G3 approves it, let the guest know it will probably mean an extra wait.",
+          "why": "Tables for larger parties are limited, so G3 has to confirm before anything is promised."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "g3",
+        "5 people",
+        "6 people",
+        "party of 5",
+        "party of 6",
+        "bigger group",
+        "large party change",
+        "special circumstances",
+        "extra wait"
+      ]
+    },
+    "cancel": {
+      "title": "Cancel a reservation",
+      "items": [
+        {
+          "type": "do",
+          "text": "Find the reservation in **Yelp Guest Manager** and cancel it."
+        },
+        {
+          "type": "ask",
+          "text": "Is the reservation within the next 24 hours?"
+        }
+      ],
+      "options": [
+        {
+          "label": "Yes, within 24 hours",
+          "to": "cancel-dnc"
+        },
+        {
+          "label": "No, more than 24 hours away",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "cancel",
+        "cancellation",
+        "can't make it",
+        "not coming",
+        "cancel my reservation",
+        "cancellation fee",
+        "no show",
+        "yelp",
+        "24 hours"
+      ]
+    },
+    "cancel-dnc": {
+      "title": "Waive the cancellation fee",
+      "items": [
+        {
+          "type": "say",
+          "text": "I'll make sure you won't be charged a cancellation fee."
+        },
+        {
+          "type": "do",
+          "text": "In the reservation's guest notes in **Yelp Guest Manager**, write “DNC” followed by your initials (for example, “DNC JS”).",
+          "why": "“DNC” means “do not charge.” SOP only requires it for cancellations made less than 2 hours before the reservation (or after it), but writing it for anything within 24 hours means guests are never surprised by a fee. [CONFIRM: the 24-hour practice goes beyond SOP, so confirm it with a manager]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "dnc",
+        "do not charge",
+        "waive fee",
+        "cancellation fee",
+        "no charge",
+        "within 24 hours",
+        "same day cancel",
+        "will I be charged",
+        "fee"
+      ]
+    },
+    "loc": {
+      "title": "Location & the move",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“Are you asking where we are now, or about our move?”"
+        }
+      ],
+      "options": [
+        {
+          "label": "Where are you?",
+          "to": "loc-now"
+        },
+        {
+          "label": "When are you moving?",
+          "to": "loc-move"
+        }
+      ],
+      "keywords": [
+        "location",
+        "address",
+        "where",
+        "directions",
+        "move",
+        "moving",
+        "relocation",
+        "new location",
+        "find you"
+      ]
+    },
+    "loc-now": {
+      "title": "Where we are now",
+      "items": [
+        {
+          "type": "say",
+          "text": "We're on the second floor of the parking garage at the south end of U Village, right next to the Tesla store and very close to Chipotle. Look for the big red sign out front with the Din Tai Fung characters on it.",
+          "why": "The garage location is easy to miss from street level, so landmarks and the red sign help guests find us."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "where are you",
+        "address",
+        "directions",
+        "parking garage",
+        "second floor",
+        "2nd floor",
+        "tesla",
+        "chipotle",
+        "can't find you",
+        "how do I get there",
+        "red sign",
+        "u village",
+        "university village",
+        "parking"
+      ]
+    },
+    "loc-move": {
+      "title": "The new location",
+      "items": [
+        {
+          "type": "info",
+          "text": "The move has been pushed back several times. It was originally planned for Q4 2026, and the current estimate is around February 2027 (as of November 2026)."
+        },
+        {
+          "type": "say",
+          "text": "We're currently expecting to move around February 2027, but the date has changed before, so it's best to check back closer to then.",
+          "why": "The date has already moved several times, so give it as an estimate, not a promise."
+        },
+        {
+          "type": "info",
+          "text": "[TBD: where is the new location, in case guests ask?]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "move",
+        "moving",
+        "relocating",
+        "relocation",
+        "new location",
+        "new restaurant",
+        "when are you moving",
+        "february 2027",
+        "are you closing",
+        "closing"
+      ]
+    },
+    "takeout": {
+      "title": "Takeout orders",
+      "todo": true,
+      "items": [
+        {
+          "type": "info",
+          "text": "[TBD: takeout content hasn't been written yet.]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "takeout",
+        "take out",
+        "to go",
+        "pickup order",
+        "order food",
+        "carry out",
+        "phone order",
+        "order ahead"
+      ]
+    },
+    "menu": {
+      "title": "Allergens & menu",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“Is this about an allergy, or about a specific menu item?”"
+        }
+      ],
+      "options": [
+        {
+          "label": "Allergy or ingredient question",
+          "to": "allergen"
+        },
+        {
+          "label": "“Do you still have…?” or other menu question",
+          "to": "menu-item"
+        }
+      ],
+      "keywords": [
+        "menu",
+        "allergy",
+        "allergen",
+        "ingredients",
+        "dish",
+        "food",
+        "what's in"
+      ]
+    },
+    "allergen": {
+      "title": "Allergens & ingredients",
+      "items": [
+        {
+          "type": "do",
+          "text": "Check the allergen cheat sheet in the **runner training binder**, and/or look up the item's allergens in **Toast POS**."
+        },
+        {
+          "type": "do",
+          "text": "If the guest is worried about an ingredient that isn't normally listed as an allergen, go the extra mile and check the full ingredient list in the **runners' binder**.",
+          "why": "The cheat sheet and Toast cover the standard allergens. The full ingredient list catches anything else a guest is concerned about."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "allergy",
+        "allergic",
+        "allergen",
+        "peanut",
+        "peanuts",
+        "nuts",
+        "tree nuts",
+        "shellfish",
+        "shrimp",
+        "gluten",
+        "wheat",
+        "celiac",
+        "dairy",
+        "milk",
+        "egg",
+        "soy",
+        "sesame",
+        "fish",
+        "msg",
+        "pork",
+        "vegetarian",
+        "vegan",
+        "ingredients",
+        "does this have",
+        "cheat sheet",
+        "binder",
+        "toast"
+      ]
+    },
+    "menu-item": {
+      "title": "Menu items",
+      "items": [
+        {
+          "type": "info",
+          "text": "Rice cakes have been removed from the menu because they weren't a very popular item (as of November 2026)."
+        },
+        {
+          "type": "info",
+          "text": "[TBD: any other recent menu changes cashiers should know?]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "rice cakes",
+        "do you still have",
+        "discontinued",
+        "removed from menu",
+        "menu change",
+        "no longer",
+        "menu item",
+        "favorite dish"
+      ]
+    },
+    "lost": {
+      "title": "Lost item",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“What did you leave behind?”",
+          "why": "Where we keep an item depends on what it is. Valuables (jewelry, credit cards, IDs, wallets, etc.) go in the manager safe. Everyday items (clothes, water bottles, etc.) go in the lost & found bins at the cashier station."
+        }
+      ],
+      "options": [
+        {
+          "label": "Something valuable (jewelry, card, ID, wallet…)",
+          "to": "lost-safe"
+        },
+        {
+          "label": "An everyday item (clothes, water bottle…)",
+          "to": "lost-bins"
+        }
+      ],
+      "keywords": [
+        "lost",
+        "left",
+        "forgot",
+        "left behind",
+        "lost and found",
+        "lost & found",
+        "jacket",
+        "wallet",
+        "phone",
+        "keys",
+        "umbrella",
+        "bag",
+        "lost item",
+        "left my"
+      ]
+    },
+    "lost-safe": {
+      "title": "Check the manager safe",
+      "items": [
+        {
+          "type": "do",
+          "text": "Ask a manager to check the safe. You need a manager's help to look for the item and to retrieve it."
+        }
+      ],
+      "options": [
+        {
+          "label": "Found it",
+          "to": "lost-found"
+        },
+        {
+          "label": "Not there",
+          "to": "lost-notfound"
+        }
+      ],
+      "keywords": [
+        "wallet",
+        "credit card",
+        "debit card",
+        "card",
+        "id",
+        "driver's license",
+        "license",
+        "jewelry",
+        "earring",
+        "necklace",
+        "bracelet",
+        "watch",
+        "valuable",
+        "safe",
+        "manager safe"
+      ]
+    },
+    "lost-bins": {
+      "title": "Check the lost & found bins",
+      "items": [
+        {
+          "type": "do",
+          "text": "Check the lost & found bins at the cashier station."
+        }
+      ],
+      "options": [
+        {
+          "label": "Found it",
+          "to": "lost-found"
+        },
+        {
+          "label": "Not there",
+          "to": "lost-notfound"
+        }
+      ],
+      "keywords": [
+        "jacket",
+        "coat",
+        "sweater",
+        "hoodie",
+        "scarf",
+        "hat",
+        "gloves",
+        "clothes",
+        "water bottle",
+        "bottle",
+        "tumbler",
+        "lost and found bin",
+        "bins"
+      ]
+    },
+    "lost-found": {
+      "title": "We have it",
+      "items": [
+        {
+          "type": "info",
+          "text": "Let the guest know we have it and they can come pick it up. [TBD: pickup process, e.g., do they need ID, and how long do we hold items?]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "found it",
+        "we have it",
+        "come pick it up",
+        "pick up lost item",
+        "come get it"
+      ]
+    },
+    "lost-notfound": {
+      "title": "Not found (yet)",
+      "items": [
+        {
+          "type": "do",
+          "text": "Take the guest's name, phone number, and a description of the item. [TBD: where should this be written down?]",
+          "why": "If the item turns up later, we can call them to come pick it up."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "not found",
+        "can't find it",
+        "call me if you find it",
+        "contact info",
+        "description",
+        "phone number"
+      ]
+    },
+    "refund": {
+      "title": "Order problem / refund",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“How did you place your order: on our website, or through an app like DoorDash or Uber Eats?”",
+          "why": "Who handles the refund depends on where the order was placed."
+        }
+      ],
+      "options": [
+        {
+          "label": "Our website (OLO)",
+          "to": "refund-olo"
+        },
+        {
+          "label": "DoorDash, Uber Eats, or another delivery app",
+          "to": "refund-3p"
+        },
+        {
+          "label": "Not sure",
+          "to": "refund-lookup"
+        }
+      ],
+      "keywords": [
+        "refund",
+        "missing item",
+        "wrong order",
+        "order problem",
+        "complaint",
+        "missing",
+        "forgot my",
+        "money back",
+        "delivery",
+        "online order",
+        "olo",
+        "order was wrong"
+      ]
+    },
+    "refund-lookup": {
+      "title": "Look up the order",
+      "items": [
+        {
+          "type": "do",
+          "text": "Ask for the guest's name and search for it in **Toast POS** to see where the order came from."
+        }
+      ],
+      "options": [
+        {
+          "label": "Our website (OLO)",
+          "to": "refund-olo"
+        },
+        {
+          "label": "Third-party delivery app",
+          "to": "refund-3p"
+        }
+      ],
+      "keywords": [
+        "not sure",
+        "don't know",
+        "look up order",
+        "find order",
+        "order name",
+        "which app",
+        "toast"
+      ]
+    },
+    "refund-olo": {
+      "title": "Website order (OLO)",
+      "items": [
+        {
+          "type": "do",
+          "text": "Call a manager on the **walkie-talkie** and brief them: the guest's name, the order, and what was wrong or missing. The manager decides the best compensation.",
+          "why": "For orders placed on our website, the manager decides how to make it right, so bring them in rather than promising anything yourself."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "website order",
+        "online order",
+        "olo",
+        "ordered online",
+        "our website",
+        "manager",
+        "compensation",
+        "walkie",
+        "walkie-talkie"
+      ]
+    },
+    "refund-3p": {
+      "title": "Third-party delivery order",
+      "items": [
+        {
+          "type": "say",
+          "text": "I'm so sorry about that! Since the order went through [DoorDash / Uber Eats], their customer support handles refunds. You can reach them through the app.",
+          "why": "The order and payment went through the delivery app, so only that app's support can refund it."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "doordash",
+        "door dash",
+        "uber eats",
+        "ubereats",
+        "delivery app",
+        "third party",
+        "delivery driver",
+        "dasher",
+        "app support"
+      ]
+    },
+    "gift": {
+      "title": "Gift card balance",
+      "items": [
+        {
+          "type": "info",
+          "text": "Guests can check their balance online on the Din Tai Fung website, but we're happy to check it over the phone."
+        },
+        {
+          "type": "ask",
+          "text": "“Could I get the number on the gift card?”"
+        },
+        {
+          "type": "do",
+          "text": "In **Toast POS**, use **Balance Inquiry** and read the balance to the guest.",
+          "why": "Some guests would rather call than check online, and Toast's Balance Inquiry makes it quick."
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "gift card",
+        "gift card balance",
+        "balance",
+        "how much is left",
+        "card balance",
+        "check balance",
+        "remaining balance",
+        "balance inquiry",
+        "toast"
+      ]
+    },
+    "other": {
+      "title": "Something else",
+      "items": [
+        {
+          "type": "info",
+          "text": "[TBD: what should cashiers do for calls not covered here? For example, put the guest on a brief hold and ask a manager?]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Done — wrap up",
+          "to": "wrap"
+        }
+      ],
+      "keywords": [
+        "other",
+        "something else",
+        "not listed",
+        "not covered",
+        "don't know",
+        "hold",
+        "manager",
+        "hours",
+        "hiring",
+        "job",
+        "catering"
+      ]
+    },
+    "wrap": {
+      "title": "Anything else?",
+      "items": [
+        {
+          "type": "ask",
+          "text": "“Is there anything else I can help you with?”"
+        }
+      ],
+      "options": [
+        {
+          "label": "Yes",
+          "hint": "Back to the topics",
+          "to": "hub"
+        },
+        {
+          "label": "No, that's all",
+          "to": "close"
+        }
+      ],
+      "keywords": [
+        "wrap up",
+        "anything else",
+        "finish",
+        "end of call",
+        "another question"
+      ]
+    },
+    "close": {
+      "title": "End the call",
+      "items": [
+        {
+          "type": "say",
+          "text": "Thank you for calling Din Tai Fung University Village. Have a great day! [CONFIRM: is there a standard closing line?]"
+        }
+      ],
+      "options": [
+        {
+          "label": "Start a new call",
+          "to": "ring"
+        }
+      ],
+      "keywords": [
+        "goodbye",
+        "bye",
+        "end call",
+        "hang up",
+        "closing line",
+        "thank you for calling",
+        "have a great day"
+      ]
+    }
+  }
+};
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Setup ---------- */
+  var C = window.GUIDE_CONTENT;
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  var flow = $('#flow');
+
+  if (!C || !C.nodes || !Object.keys(C.nodes).length) {
+    flow.innerHTML = '<div class="notice"><h2>No content loaded</h2><p>This is <code>template.html</code>. ' +
+      'Run <code>node build.mjs</code> in this folder, then open <code>index.html</code>.</p></div>';
+    $$('.tb').forEach(function (b) { b.disabled = true; });
+    return;
+  }
+
+  var TOPICS_ID = 'hub';                 // the "What's the call about?" step
+  var NODES = C.nodes;
+  var IDS = Object.keys(NODES);
+  var META = C.meta || {};
+  var START = NODES[C.startId] ? C.startId : IDS[0];
+  var APP_TITLE = META.title || 'Phone Call Guide';
+
+  var TYPES = {
+    say:  { label: 'Say',  icon: '“' },
+    ask:  { label: 'Ask',  icon: '?' },
+    info: { label: 'Info', icon: 'i' },
+    'do': { label: 'Do',   icon: '✓' },
+    rule: { label: 'Rule', icon: '!' }
+  };
+  var ICON = {
+    chev: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
+    back: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5"/></svg>',
+    arrow: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    fork: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v6M12 9c0 4-7 4-7 8v4M12 9c0 4 7 4 7 8v4M12 9v12"/></svg>'
+  };
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var wideMQ = window.matchMedia('(min-width: 1000px)');
+  function onMQ(mq, fn) { if (mq.addEventListener) mq.addEventListener('change', fn); else if (mq.addListener) mq.addListener(fn); }
+  function store(key, val) {
+    try {
+      if (val === undefined) return window.localStorage.getItem(key);
+      window.localStorage.setItem(key, val);
+    } catch (e) { /* storage unavailable (private mode or file://) */ }
+    return null;
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function last(arr) { return arr[arr.length - 1]; }
+  function optionsOf(id) { return (NODES[id] && NODES[id].options) || []; }
+  function itemsOf(id) { return (NODES[id] && NODES[id].items) || []; }
+
+  /* ---------- Graph: shortest routes (breadth-first search) ---------- */
+  var bfsParent = {};
+  var bfsOrder = [];
+  (function () {
+    var seen = {}; seen[START] = true;
+    var queue = [START];
+    while (queue.length) {
+      var id = queue.shift();
+      bfsOrder.push(id);
+      optionsOf(id).forEach(function (o) {
+        if (NODES[o.to] && !seen[o.to]) { seen[o.to] = true; bfsParent[o.to] = { from: id, label: o.label }; queue.push(o.to); }
+      });
+    }
+  })();
+  var REACHABLE = {}; bfsOrder.forEach(function (id) { REACHABLE[id] = true; });
+
+  function shortestPath(id) {
+    if (!NODES[id]) return [{ id: START, via: null }];
+    var chain = [];
+    var cur = id;
+    while (cur !== START && bfsParent[cur]) { chain.unshift({ id: cur, via: bfsParent[cur].label }); cur = bfsParent[cur].from; }
+    if (cur !== START) return [{ id: id, via: null }];
+    chain.unshift({ id: START, via: null });
+    return chain;
+  }
+
+  /* ---------- Text formatting ---------- */
+  var NOTE_RE = /\[(TBD|CONFIRM):\s*([^\]]*)\]/g;
+  var TRAIL_NOTE_RE = /\s*\[(TBD|CONFIRM):\s*([^\]]*)\]\s*$/;
+
+  // Pull [TBD]/[CONFIRM] notes off the END of a text so they can show as a badge row under it.
+  function splitTrailingNotes(text) {
+    var main = String(text == null ? '' : text);
+    var notes = [];
+    var m;
+    while ((m = main.match(TRAIL_NOTE_RE))) { notes.unshift({ kind: m[1], note: m[2].trim() }); main = main.slice(0, m.index); }
+    return { main: main.trim(), notes: notes };
+  }
+  function fmt(text) {
+    var h = esc(text);
+    h = h.replace(NOTE_RE, function (_, kind, note) {
+      return '<span class="needs"><span class="needs-tag">Needs info</span>' + kind + ': ' + note.trim() + '</span>';
+    });
+    h = h.replace(/\[([^\]]+)\]/g, '<span class="ph">[$1]</span>');
+    h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    return h;
+  }
+  function plain(text) { return String(text == null ? '' : text).replace(/\*\*/g, ''); }
+  function notesHtml(notes) {
+    return notes.map(function (n) {
+      return '<div class="needs-block"><span class="needs-tag">Needs info</span><span>' + esc(n.kind) + ': ' + fmt(n.note) + '</span></div>';
+    }).join('');
+  }
+  function noteCount(id) {
+    var n = NODES[id]; var c = 0;
+    var all = [n.title].concat(itemsOf(id).map(function (it) { return (it.text || '') + ' ' + (it.why || ''); }))
+      .concat(optionsOf(id).map(function (o) { return (o.label || '') + ' ' + (o.hint || ''); })).join(' ');
+    all.replace(NOTE_RE, function () { c++; return ''; });
+    return c;
+  }
+  function typeOf(item) { return item && TYPES[item.type] ? item.type : 'info'; }
+  function primaryType(id) { var it = itemsOf(id)[0]; return typeOf(it); }
+  function tico(type) { return '<span class="tico t-' + type + '" aria-hidden="true">' + TYPES[type].icon + '</span>'; }
+
+  /* ---------- "Why?" state & training mode ---------- */
+  var ALL_WHY = [];
+  IDS.forEach(function (id) { itemsOf(id).forEach(function (it, i) { if (it && it.why) ALL_WHY.push(id + '#' + i); }); });
+  var training = store('dtf-guide-training') === '1';
+  var openWhys = new Set(training ? ALL_WHY : []);
+
+  function whyBits(id, i, item) {
+    if (!item.why) return null;
+    var key = id + '#' + i;
+    var safe = String(id).replace(/[^A-Za-z0-9_-]/g, '_') + '-' + i;
+    var parts = splitTrailingNotes(item.why);
+    var open = openWhys.has(key);
+    return {
+      notes: parts.notes,
+      button: '<button type="button" class="why-btn" id="whyb-' + safe + '" data-why="' + esc(key) + '" aria-expanded="' + open + '" aria-controls="why-' + safe + '">' +
+        '<span class="why-pill">Why?' + ICON.chev + '</span></button>',
+      panel: '<div class="why-panel' + (open ? ' open' : '') + '" id="why-' + safe + '">' +
+        '<div class="why-inner"><div class="why-box"><b>Why:</b> ' + fmt(parts.main) + '</div></div></div>'
+    };
+  }
+
+  /* ---------- Rendering a step ---------- */
+  function renderItems(id) {
+    var groups = [];
+    itemsOf(id).forEach(function (it, i) {
+      var t = typeOf(it);
+      var g = last(groups);
+      if ((t === 'info' || t === 'do') && g && g.type === t) g.list.push({ it: it, i: i });
+      else groups.push({ type: t, list: [{ it: it, i: i }] });
+    });
+    return groups.map(function (g) {
+      if (g.type === 'info' || g.type === 'do') return renderList(id, g);
+      return g.list.map(function (x) { return renderSingle(id, g.type, x.it, x.i); }).join('');
+    }).join('');
+  }
+  function renderSingle(id, type, it, i) {
+    var parts = splitTrailingNotes(it.text);
+    var w = whyBits(id, i, it);
+    var notes = parts.notes.concat(w ? w.notes : []);
+    var label = type === 'say' && it.exact ? 'Say word for word' : TYPES[type].label;
+    var head = '<div class="blk-head"><span class="tlabel t-' + type + '">' + tico(type) + label + '</span>' + (w ? w.button : '') + '</div>';
+    var body = '';
+    if (parts.main) {
+      if (type === 'say') body = '<div class="bubble">' + fmt(parts.main) + '</div>';
+      else if (type === 'ask') body = '<div class="q">' + fmt(parts.main) + '</div>';
+      else body = '<div class="r">' + fmt(parts.main) + '</div>';
+    }
+    return '<div class="blk blk-' + type + '">' + head + body + notesHtml(notes) + (w ? w.panel : '') + '</div>';
+  }
+  function renderList(id, g) {
+    var type = g.type;
+    var lis = g.list.map(function (x) {
+      var parts = splitTrailingNotes(x.it.text);
+      var w = whyBits(id, x.i, x.it);
+      var notes = parts.notes.concat(w ? w.notes : []);
+      return '<li><div class="li-row"><span class="li-text">' + fmt(parts.main) + '</span>' + (w ? w.button : '') + '</div>' +
+        notesHtml(notes) + (w ? w.panel : '') + '</li>';
+    }).join('');
+    return '<div class="blk blk-' + type + '"><div class="blk-head"><span class="tlabel t-' + type + '">' + tico(type) + TYPES[type].label + '</span></div>' +
+      '<ul class="list ' + (type === 'do' ? 'checks' : 'bullets') + '">' + lis + '</ul></div>';
+  }
+  function isGrid(id) { return id === TOPICS_ID || optionsOf(id).length >= 5; }
+
+  function currentCard(id, index, enter) {
+    var n = NODES[id];
+    var grid = isGrid(id);
+    var opts = optionsOf(id).map(function (o, i) {
+      var k = i < 9 ? String(i + 1) : (i === 9 ? '0' : '');
+      var soon = NODES[o.to] && NODES[o.to].todo ? '<span class="soon">Coming soon</span>' : '';
+      return '<button type="button" class="opt" data-opt="' + i + '"' + (k ? ' aria-keyshortcuts="' + k + '"' : '') + '>' +
+        '<span class="num" aria-hidden="true">' + (k || '•') + '</span>' +
+        '<span class="opt-text"><span class="opt-label">' + fmt(o.label) + '</span>' +
+        (o.hint ? '<span class="opt-hint">' + fmt(o.hint) + '</span>' : '') + soon + '</span>' +
+        '<span class="arr">' + ICON.arrow + '</span></button>';
+    }).join('');
+    var optLabel = id === TOPICS_ID ? 'Pick the topic' : (grid ? 'Pick one' : 'Next');
+    return '<section class="card-current' + (enter ? ' enter' : '') + '" id="current-card" aria-labelledby="cur-title">' +
+      '<div class="card-head"><span class="step-no" aria-hidden="true">' + (index + 1) + '</span>' +
+      '<h2 id="cur-title" tabindex="-1"><span class="sr-only">Step ' + (index + 1) + ': </span>' + (grid ? ICON.fork : '') + '<span>' + fmt(n.title) + '</span></h2>' +
+      (n.todo ? '<span class="soon">Coming soon</span>' : '') + '</div>' +
+      '<div class="items">' + renderItems(id) + '</div>' +
+      '<div class="opts-wrap"><p class="opts-label" id="opts-label">' + optLabel + '</p>' +
+      (grid ? '<div class="fork" aria-hidden="true"></div>' : '') +
+      '<div class="opts' + (grid ? ' grid' : '') + '" role="group" aria-labelledby="opts-label">' + opts + '</div></div>' +
+      '</section>';
+  }
+  function pastCard(id, index) {
+    return '<button type="button" class="card-past" data-rewind="' + index + '">' +
+      '<span class="step-no" aria-hidden="true">' + (index + 1) + '</span>' +
+      '<span class="t"><span class="sr-only">Go back to step ' + (index + 1) + ': </span>' + fmt(NODES[id].title) + '</span>' +
+      '<span class="rw" aria-hidden="true">' + ICON.back + '</span></button>';
+  }
+  function connector(via, active) {
+    return '<div class="conn' + (active ? ' active' : '') + '"><span class="conn-label"><span class="sr-only">Chose: </span>' +
+      (via ? fmt(via) : '↓') + '</span></div>';
+  }
+
+  /* ---------- State, history and deep links ---------- */
+  var path = [];
+  var btnBack = $('#btn-back'), btnRestart = $('#btn-restart'), btnTopics = $('#btn-topics');
+  var btnMap = $('#btn-map'), btnSearch = $('#btn-search'), btnMenu = $('#btn-menu');
+  var srStatus = $('#sr-status');
+
+  function currentId() { return last(path).id; }
+  function keyOf(p) { return (p || []).map(function (s) { return s.id; }).join('>'); }
+  function validPath(p) { return Array.isArray(p) && p.length > 0 && p.every(function (s) { return s && NODES[s.id]; }); }
+  function hashId() { try { return decodeURIComponent(location.hash.replace(/^#/, '')); } catch (e) { return location.hash.replace(/^#/, ''); } }
+
+  function writeHistory(state, replace) {
+    var url = '#' + encodeURIComponent(last(state.path).id);
+    try {
+      if (replace) history.replaceState(state, '', url); else history.pushState(state, '', url);
+    } catch (e) {
+      if (location.hash !== url) location.hash = url;   // fallback for browsers that block pushState here
+    }
+  }
+  function go(newPath, opts) {
+    opts = opts || {};
+    var prev = path;
+    if (keyOf(newPath) === keyOf(prev)) {          // already here: just bring it into view
+      scrollToCurrent(true);
+      var ttl = $('#cur-title'); if (ttl && opts.focus !== false) ttl.focus({ preventScroll: true });
+      return;
+    }
+    var enter = newPath.length === prev.length + 1 && keyOf(newPath.slice(0, -1)) === keyOf(prev);
+    path = newPath;
+    writeHistory({ path: path, prev: keyOf(prev) }, !!opts.replace);
+    render({ enter: enter, focus: opts.focus !== false, smooth: true });
+  }
+  function choose(i) {
+    var o = optionsOf(currentId())[i];
+    if (!o || !NODES[o.to]) return;
+    if (o.to === START) go([{ id: START, via: null }]);        // "Start a new call" clears the path
+    else go(path.concat([{ id: o.to, via: o.label }]));
+  }
+  function rewind(i) { if (i >= 0 && i < path.length - 1) go(path.slice(0, i + 1)); }
+  function jumpTo(id) { if (NODES[id]) go(shortestPath(id)); }
+  function goBack() {
+    if (path.length < 2) return;
+    var target = path.slice(0, -1);
+    var st = history.state;
+    if (st && st.prev === keyOf(target) && keyOf(st.path) === keyOf(path)) history.back();
+    else go(target);
+  }
+  function fromHash() {
+    var id = hashId();
+    if (id && NODES[id]) path = shortestPath(id);
+    else {
+      if (id) toast('Couldn’t find the step “' + id + '”. Starting from the beginning.');
+      path = [{ id: START, via: null }];
+    }
+    writeHistory({ path: path, prev: null }, true);
+    render({ focus: true, smooth: true });
+  }
+  window.addEventListener('popstate', function (e) {
+    var st = e.state;
+    if (st && validPath(st.path)) { path = st.path; render({ focus: true, smooth: true }); }
+    else if (!(path.length && hashId() === currentId())) fromHash();
+  });
+  window.addEventListener('hashchange', function () {
+    var id = hashId();
+    if (path.length && id === currentId()) return;
+    fromHash();
+  });
+
+  /* ---------- Render ---------- */
+  function render(o) {
+    o = o || {};
+    var lastI = path.length - 1;
+    var html = '';
+    path.forEach(function (s, i) {
+      if (i > 0) html += connector(s.via, i === lastI);
+      html += i === lastI ? currentCard(s.id, i, o.enter) : pastCard(s.id, i);
+    });
+    flow.innerHTML = html;
+
+    var id = currentId();
+    btnBack.disabled = path.length < 2;
+    if (id === TOPICS_ID) btnTopics.setAttribute('aria-current', 'true'); else btnTopics.removeAttribute('aria-current');
+    document.title = NODES[id].title + ' — ' + APP_TITLE;
+    srStatus.textContent = 'Step ' + path.length + ': ' + NODES[id].title;
+    updateMap(true);
+
+    var title = $('#cur-title');
+    if (o.focus && title) title.focus({ preventScroll: true });
+    if (o.scroll !== false) scrollToCurrent(o.smooth);
+  }
+  function scrollToCurrent(smooth) {
+    var behavior = smooth && !reduceMotion.matches ? 'smooth' : 'auto';
+    if (path.length === 1) { window.scrollTo({ top: 0, behavior: behavior }); return; }
+    var card = $('#current-card');
+    if (!card) return;
+    var target = card.previousElementSibling && card.previousElementSibling.classList.contains('conn') ? card.previousElementSibling : card;
+    target.scrollIntoView({ behavior: behavior, block: 'start' });
+  }
+
+  flow.addEventListener('click', function (e) {
+    var why = e.target.closest('.why-btn');
+    if (why) { toggleWhy(why); return; }
+    var opt = e.target.closest('.opt');
+    if (opt) { choose(+opt.getAttribute('data-opt')); return; }
+    var past = e.target.closest('.card-past');
+    if (past) { rewind(+past.getAttribute('data-rewind')); }
+  });
+  function toggleWhy(btn) {
+    var open = btn.getAttribute('aria-expanded') !== 'true';
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.setAttribute('aria-expanded', String(open));
+    if (panel) panel.classList.toggle('open', open);
+    var key = btn.getAttribute('data-why');
+    if (open) openWhys.add(key); else openWhys.delete(key);
+  }
+
+  /* ---------- Map: outline of the whole tree ---------- */
+  var mapRoot = document.createElement('div');
+  mapRoot.className = 'map';
+  var mapSide = $('#map-side'), mapSheetBody = $('#map-sheet-body'), layout = $('#layout');
+  var dlgMap = $('#dlg-map'), dlgSearch = $('#dlg-search'), dlgMenu = $('#dlg-menu');
+  var expanded = new Set();
+  var expanderOf = {};      // id -> id of the outline row that must be open to show it
+  var hasKids = {};
+  var sideHidden = store('dtf-guide-map-hidden') === '1';
+
+  function buildMap() {
+    // A step that 3+ different steps lead to (like "Anything else?") is a shared step:
+    // it's listed once at the top level instead of under one topic.
+    var parentsOf = {};
+    bfsOrder.forEach(function (id) {
+      optionsOf(id).forEach(function (o) {
+        if (!REACHABLE[o.to]) return;
+        (parentsOf[o.to] = parentsOf[o.to] || {})[id] = true;
+      });
+    });
+    var parentCount = function (id) { return Object.keys(parentsOf[id] || {}).length; };
+    var shared = {};
+    bfsOrder.forEach(function (id) { if (id !== START && parentCount(id) >= 3) shared[id] = true; });
+
+    var kidsOf = {};
+    bfsOrder.forEach(function (id) {
+      var seen = {}; var kids = [];
+      optionsOf(id).forEach(function (o) {
+        if (!NODES[o.to] || seen[o.to]) return;
+        seen[o.to] = true;
+        var isTree = o.to !== START && !shared[o.to] && bfsParent[o.to] && bfsParent[o.to].from === id;
+        if (isTree) kids.push({ kind: 'node', id: o.to });
+        else if (!shared[o.to]) kids.push({ kind: 'ref', id: o.to });
+      });
+      kidsOf[id] = kids;
+    });
+
+    function badges(id) {
+      var b = '';
+      var c = noteCount(id);
+      if (NODES[id].todo) b += '<span class="tn-badge soon-b">Soon</span>';
+      if (c) b += '<span class="tn-badge needs-b">Needs info' + (c > 1 ? ' \u00D7' + c : '') + '</span>';
+      return b ? '<span class="tn-badges">' + b + '</span>' : '';
+    }
+    function nodeLi(id, nested, extraClass) {
+      var n = NODES[id];
+      var sub = shared[id] ? '<span class="tn-sub">Shared step · reached from ' + parentCount(id) + ' steps</span>' : '';
+      var toggle = nested
+        ? '<button type="button" class="tn-toggle" data-toggle="' + esc(id) + '" aria-expanded="false" aria-controls="mk-' + esc(id) + '">' +
+          '<span class="sr-only">Show or hide steps under ' + esc(plain(n.title)) + '</span>' + ICON.chev + '</button>'
+        : '<span class="tn-spacer" aria-hidden="true"></span>';
+      return '<li class="tn' + (extraClass ? ' ' + extraClass : '') + '" data-node="' + esc(id) + '"><div class="tn-row">' + toggle +
+        '<button type="button" class="tn-jump" data-jump="' + esc(id) + '">' + tico(primaryType(id)) +
+        '<span class="tn-text"><span class="tn-title">' + esc(plain(n.title)) + '</span>' + sub + badges(id) + '</span></button></div>' +
+        (nested || '') + '</li>';
+    }
+    function refLi(id) {
+      return '<li class="tn tn-ref"><div class="tn-row"><span class="tn-spacer" aria-hidden="true"></span>' +
+        '<button type="button" class="tn-jump" data-jump="' + esc(id) + '"><span class="ref-arrow" aria-hidden="true">↪</span>' +
+        '<span class="tn-text"><span class="sr-only">Leads to: </span><span class="tn-title">' + esc(plain(NODES[id].title)) + '</span></span></button></div></li>';
+    }
+    function siblings(entries, expander, isRoot) {
+      var h = '';
+      entries.forEach(function (entry, idx) {
+        if (entry.kind === 'ref') { h += refLi(entry.id); return; }
+        var id = entry.id;
+        var first = true;
+        // Steps with a single next step are shown as a sequence at the same level.
+        for (;;) {
+          expanderOf[id] = expander;
+          var kids = kidsOf[id] || [];
+          var cls = isRoot && idx > 0 && first ? 'root-group' : '';
+          if (optionsOf(id).length === 1 && kids.length === 1 && kids[0].kind === 'node') {
+            h += nodeLi(id, null, cls);
+            id = kids[0].id; first = false;
+            continue;
+          }
+          var nested = kids.length ? '<ul class="tree" id="mk-' + esc(id) + '" hidden>' + siblings(kids, id, false) + '</ul>' : '';
+          if (kids.length) hasKids[id] = true;
+          h += nodeLi(id, nested, cls);
+          break;
+        }
+      });
+      return h;
+    }
+    var roots = [{ kind: 'node', id: START }].concat(bfsOrder.filter(function (id) { return shared[id]; }).map(function (id) { return { kind: 'node', id: id }; }));
+    var legend = Object.keys(TYPES).map(function (t) { return '<span>' + tico(t) + TYPES[t].label + '</span>'; }).join('');
+    mapRoot.innerHTML =
+      '<div class="map-tools"><button type="button" class="mini-btn" data-map="expand">Expand all</button>' +
+      '<button type="button" class="mini-btn" data-map="collapse">Collapse all</button></div>' +
+      '<ul class="tree root">' + siblings(roots, null, true) + '</ul>' +
+      '<div class="map-legend" aria-label="Icon key">' + legend + '</div>';
+
+    // Open the top level by default.
+    Object.keys(hasKids).forEach(function (id) { if (expanderOf[id] === null) setExpanded(id, true); });
+  }
+  function setExpanded(id, on) {
+    if (on) expanded.add(id); else expanded.delete(id);
+    var ul = mapRoot.querySelector('[id="mk-' + id + '"]');
+    if (ul) ul.hidden = !on;
+    var t = mapRoot.querySelector('[data-toggle="' + id + '"]');
+    if (t) t.setAttribute('aria-expanded', String(on));
+  }
+  function mapScroller() { return wideMQ.matches ? mapSide : mapSheetBody; }
+  function revealCurrentInMap() {
+    var row = mapRoot.querySelector('.tn-jump[aria-current]');
+    var box = mapScroller();
+    if (!row || !box || !box.clientHeight) return;
+    var r = row.getBoundingClientRect(), b = box.getBoundingClientRect();
+    if (r.top < b.top + 8 || r.bottom > b.bottom - 8) box.scrollTop += r.top - b.top - b.height / 3;
+  }
+  function updateMap(scroll) {
+    var id = currentId();
+    $$('.tn-jump[aria-current]', mapRoot).forEach(function (b) { b.removeAttribute('aria-current'); });
+    var row = mapRoot.querySelector('.tn[data-node="' + id + '"] > .tn-row > .tn-jump');
+    if (row) row.setAttribute('aria-current', 'step');
+    var e = expanderOf[id];
+    while (e) { setExpanded(e, true); e = expanderOf[e]; }
+    if (scroll) revealCurrentInMap();
+  }
+  mapRoot.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-toggle]');
+    if (t) { var id = t.getAttribute('data-toggle'); setExpanded(id, !expanded.has(id)); return; }
+    var tool = e.target.closest('[data-map]');
+    if (tool) {
+      var on = tool.getAttribute('data-map') === 'expand';
+      Object.keys(hasKids).forEach(function (id) { setExpanded(id, on); });
+      return;
+    }
+    var j = e.target.closest('[data-jump]');
+    if (j) {
+      var target = j.getAttribute('data-jump');
+      if (dlgMap.open) closeForNav(dlgMap);
+      jumpTo(target);
+    }
+  });
+  function placeMap() {
+    if (wideMQ.matches) { mapSide.appendChild(mapRoot); if (dlgMap.open) dlgMap.close(); }
+    else mapSheetBody.appendChild(mapRoot);
+    updateLayout();
+  }
+  function updateLayout() {
+    var showSide = wideMQ.matches && !sideHidden;
+    layout.classList.toggle('has-side', showSide);
+    mapSide.hidden = !showSide;
+    if (wideMQ.matches) {
+      btnMap.setAttribute('aria-pressed', String(showSide));
+      btnMap.removeAttribute('aria-haspopup');
+      btnMap.setAttribute('aria-label', showSide ? 'Map (hide sidebar)' : 'Map (show sidebar)');
+    } else {
+      btnMap.removeAttribute('aria-pressed');
+      btnMap.setAttribute('aria-haspopup', 'dialog');
+      btnMap.setAttribute('aria-label', 'Map');
+    }
+  }
+
+  /* ---------- Search ---------- */
+  function norm(s) {
+    return plain(s).toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\u2018\u2019'\u201C\u201D"]/g, '')
+      .replace(/[^a-z0-9+$&]+/g, ' ').trim();
+  }
+  var INDEX = bfsOrder.concat(IDS.filter(function (id) { return !REACHABLE[id]; })).map(function (id, order) {
+    var n = NODES[id];
+    return {
+      id: id, order: order,
+      title: norm(n.title),
+      kw: (n.keywords || []).map(norm),
+      opts: norm(optionsOf(id).map(function (o) { return (o.label || '') + ' ' + (o.hint || ''); }).join(' ')),
+      text: norm(itemsOf(id).map(function (it) { return (it.text || '') + ' ' + (it.why || ''); }).join(' '))
+    };
+  });
+  function search(q) {
+    var nq = norm(q);
+    if (!nq) return [];
+    var terms = nq.split(' ').filter(Boolean);
+    var out = [];
+    INDEX.forEach(function (e) {
+      var score = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var t = terms[i], s = 0;
+        if (e.title.indexOf(t) > -1) s += 6;
+        if (e.kw.some(function (k) { return k.indexOf(t) > -1; })) s += 4;
+        if (e.opts.indexOf(t) > -1) s += 1;
+        if (e.text.indexOf(t) > -1) s += 1;
+        if (!s) return;                       // every word must match somewhere
+        score += s;
+      }
+      if (terms.length > 1) {
+        if (e.title.indexOf(nq) > -1) score += 8;
+        if (e.kw.some(function (k) { return k.indexOf(nq) > -1; })) score += 10;
+        if (e.text.indexOf(nq) > -1) score += 3;
+      }
+      if (e.kw.indexOf(nq) > -1) score += 6;
+      out.push({ e: e, score: score, terms: terms });
+    });
+    out.sort(function (a, b) { return b.score - a.score || a.e.order - b.e.order; });
+    return out;
+  }
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  function highlight(text, terms) {
+    var h = esc(text);
+    terms.filter(function (t) { return t.length > 1; }).forEach(function (t) {
+      h = h.replace(new RegExp('(' + escRe(esc(t)) + ')(?![^<]*>)', 'ig'), '<mark>$1</mark>');
+    });
+    return h;
+  }
+  function snippet(id, terms) {
+    var texts = itemsOf(id).map(function (it) { return plain(it.text); })
+      .concat(itemsOf(id).filter(function (it) { return it.why; }).map(function (it) { return plain(it.why); }));
+    for (var i = 0; i < terms.length; i++) {
+      var t = terms[i];
+      if (t.length < 2) continue;
+      for (var j = 0; j < texts.length; j++) {
+        var idx = texts[j].toLowerCase().indexOf(t);
+        if (idx > -1) {
+          var s = texts[j];
+          var start = Math.max(0, idx - 40);
+          if (start > 0) { var sp = s.lastIndexOf(' ', start); start = sp > -1 ? sp + 1 : start; }
+          var piece = s.slice(start, start + 120);
+          return (start > 0 ? '…' : '') + highlight(piece, terms) + (start + 120 < s.length ? '…' : '');
+        }
+      }
+    }
+    var kw = (NODES[id].keywords || []).filter(function (k) { var nk = norm(k); return terms.some(function (t) { return nk.indexOf(t) > -1; }); }).slice(0, 3);
+    if (kw.length) return 'Matches ' + kw.map(function (k) { return '“' + highlight(k, terms) + '”'; }).join(', ');
+    var t0 = plain(itemsOf(id)[0] ? itemsOf(id)[0].text : '');
+    return esc(t0.length > 110 ? t0.slice(0, 110) + '…' : t0);
+  }
+  function crumb(id) {
+    var names = [];
+    var e = expanderOf[id];
+    while (e) { if (e !== TOPICS_ID) names.unshift(plain(NODES[e].title)); e = expanderOf[e]; }
+    if (names.length) return names.join(' › ');
+    if (expanderOf[id] === TOPICS_ID) return 'Topic';
+    return 'Call steps';
+  }
+  function resultItem(id, terms) {
+    return '<li><button type="button" class="res" data-jump="' + esc(id) + '">' + tico(primaryType(id)) +
+      '<span class="res-main"><span class="res-title">' + (terms ? highlight(plain(NODES[id].title), terms) : esc(plain(NODES[id].title))) + '</span>' +
+      '<span class="res-crumb">' + esc(crumb(id)) + '</span>' +
+      (terms ? '<span class="res-snip">' + snippet(id, terms) + '</span>' : (optionsHint(id))) + '</span></button></li>';
+  }
+  function optionsHint(id) {
+    var o = bfsParent[id] && optionsOf(bfsParent[id].from).filter(function (x) { return x.to === id; })[0];
+    return o && o.hint ? '<span class="res-snip">' + fmt(o.hint) + '</span>' : '';
+  }
+  var searchInput = $('#search-input'), searchResults = $('#search-results'), searchCount = $('#search-count');
+  function runSearch() {
+    var q = searchInput.value;
+    if (!norm(q)) {
+      var topics = NODES[TOPICS_ID] ? optionsOf(TOPICS_ID).map(function (o) { return o.to; }).filter(function (id) { return NODES[id]; }) : [];
+      searchCount.textContent = topics.length ? 'All topics' : '';
+      searchResults.innerHTML = topics.map(function (id) { return resultItem(id, null); }).join('');
+      return;
+    }
+    var res = search(q);
+    searchCount.textContent = res.length ? res.length + (res.length === 1 ? ' result' : ' results') : 'No results. Try another word, or browse the Map.';
+    searchResults.innerHTML = res.slice(0, 40).map(function (r) { return resultItem(r.e.id, r.terms); }).join('');
+  }
+  searchInput.addEventListener('input', runSearch);
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {               // close right away (search boxes would otherwise just clear)
+      e.preventDefault();
+      dlgSearch.close();
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      var first = searchResults.querySelector('.res');
+      if (first) first.click();
+    } else if (e.key === 'ArrowDown') {
+      var f = searchResults.querySelector('.res');
+      if (f) { e.preventDefault(); f.focus(); }
+    }
+  });
+  searchResults.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var all = $$('.res', searchResults);
+    var i = all.indexOf(document.activeElement);
+    if (i < 0) return;
+    e.preventDefault();
+    if (e.key === 'ArrowDown' && all[i + 1]) all[i + 1].focus();
+    if (e.key === 'ArrowUp') (all[i - 1] || searchInput).focus();
+  });
+  searchResults.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-jump]');
+    if (!b) return;
+    closeForNav(dlgSearch);
+    jumpTo(b.getAttribute('data-jump'));
+  });
+
+  /* ---------- Dialogs ---------- */
+  var restoreFocus = null, skipRestore = false;
+  function openDialog(d) {
+    if (d.open) return;
+    restoreFocus = document.activeElement;
+    d.showModal();
+  }
+  function closeForNav(d) { skipRestore = true; d.close(); }
+  [dlgMap, dlgSearch, dlgMenu].forEach(function (d) {
+    d.addEventListener('close', function () {
+      if (skipRestore) { skipRestore = false; return; }
+      if (restoreFocus && document.contains(restoreFocus) && typeof restoreFocus.focus === 'function') restoreFocus.focus({ preventScroll: true });
+    });
+    d.addEventListener('click', function (e) {
+      if (e.target.closest('[data-close]')) { d.close(); return; }
+      if (e.target !== d) return;
+      var r = d.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close();
+    });
+  });
+
+  /* ---------- Top bar ---------- */
+  btnBack.addEventListener('click', goBack);
+  btnRestart.addEventListener('click', function () { go([{ id: START, via: null }]); });
+  if (NODES[TOPICS_ID]) btnTopics.addEventListener('click', function () { jumpTo(TOPICS_ID); });
+  else btnTopics.hidden = true;
+  btnMap.addEventListener('click', function () {
+    if (wideMQ.matches) {
+      sideHidden = !sideHidden;
+      store('dtf-guide-map-hidden', sideHidden ? '1' : '0');
+      updateLayout();
+      if (!sideHidden) revealCurrentInMap();
+    } else {
+      openDialog(dlgMap);
+      revealCurrentInMap();
+    }
+  });
+  function openSearch() {
+    openDialog(dlgSearch);
+    runSearch();
+    searchInput.focus();
+    searchInput.select();
+  }
+  btnSearch.addEventListener('click', openSearch);
+  btnMenu.addEventListener('click', function () { openDialog(dlgMenu); });
+  $('#skip').addEventListener('click', function () {
+    scrollToCurrent(false);
+    var t = $('#cur-title'); if (t) t.focus({ preventScroll: true });
+  });
+
+  /* ---------- Menu: training mode, copy/share link ---------- */
+  var trainingSwitch = $('#training-switch'), trainingPill = $('#training-pill');
+  function setTraining(on) {
+    training = on;
+    store('dtf-guide-training', on ? '1' : '0');
+    openWhys = new Set(on ? ALL_WHY : []);
+    $$('.why-btn', flow).forEach(function (b) {
+      b.setAttribute('aria-expanded', String(on));
+      var p = document.getElementById(b.getAttribute('aria-controls'));
+      if (p) p.classList.toggle('open', on);
+    });
+    trainingSwitch.setAttribute('aria-checked', String(on));
+    trainingPill.hidden = !on;
+  }
+  trainingSwitch.addEventListener('click', function () {
+    setTraining(trainingSwitch.getAttribute('aria-checked') !== 'true');
+    toast(training ? 'Training mode on: all explanations are open' : 'Training mode off');
+  });
+  $('#copy-link').addEventListener('click', function () {
+    var url = location.href;
+    var fallback = function () {
+      var ta = document.createElement('textarea');
+      ta.value = url; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      dlgMenu.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      ta.remove();
+      toast(ok ? 'Link copied' : 'Copy this link: ' + url);
+    };
+    try {
+      navigator.clipboard.writeText(url).then(function () { toast('Link copied'); }, fallback);
+    } catch (e) { fallback(); }
+  });
+  var shareBtn = $('#share-link');
+  if (navigator.share) {
+    shareBtn.hidden = false;
+    shareBtn.addEventListener('click', function () {
+      navigator.share({ title: NODES[currentId()].title + ' — ' + APP_TITLE, url: location.href }).catch(function () {});
+    });
+  }
+
+  var toastEl = $('#toast'), toastTimer = null;
+  function toast(msg) {
+    var openDlg = document.querySelector('dialog[open]');
+    (openDlg || document.body).appendChild(toastEl);   // keep it visible above an open panel
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.hidden = true; }, 3200);
+  }
+
+  /* ---------- Keyboard ---------- */
+  document.addEventListener('keydown', function (e) {
+    if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (document.querySelector('dialog[open]')) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if (/^[0-9]$/.test(e.key)) {
+      var i = e.key === '0' ? 9 : +e.key - 1;
+      if (optionsOf(currentId())[i]) { e.preventDefault(); choose(i); }
+    } else if (e.key === '/') {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+
+  /* ---------- Header height (for sticky offsets) ---------- */
+  var topbar = $('#topbar');
+  function setHeaderH() { document.documentElement.style.setProperty('--header-h', topbar.offsetHeight + 'px'); }
+  setHeaderH();
+  if (window.ResizeObserver) new ResizeObserver(setHeaderH).observe(topbar);
+  else window.addEventListener('resize', setHeaderH);
+
+  /* ---------- Start ---------- */
+  $('#brand').textContent = APP_TITLE;
+  $('#last-updated').textContent = META.lastUpdated || '';
+  $('#about-line').textContent = 'Content version ' + (META.version || '—') + ', last updated ' + (META.lastUpdated || '—') + '.';
+  trainingSwitch.setAttribute('aria-checked', String(training));
+  trainingPill.hidden = !training;
+
+  buildMap();
+  placeMap();
+  onMQ(wideMQ, placeMap);
+
+  (function init() {
+    var h = hashId();
+    var st = history.state;
+    var prev = null;
+    if (st && validPath(st.path) && last(st.path).id === (h || START)) { path = st.path; prev = st.prev || null; }
+    else if (h && NODES[h]) path = shortestPath(h);
+    else {
+      if (h) setTimeout(function () { toast('Couldn’t find the step “' + h + '”. Starting from the beginning.'); }, 0);
+      path = [{ id: START, via: null }];
+    }
+    writeHistory({ path: path, prev: prev }, true);
+    render({ focus: false, smooth: false, scroll: path.length > 1 });
+  })();
+})();
+</script>
+</body>
+</html>
